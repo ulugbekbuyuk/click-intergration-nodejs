@@ -11,6 +11,11 @@ module.exports = {
     },
 
     checkInvoice: async function(req, res, next) {
-
+        try {
+            const result = await invoiceService.checkInvoice(req.body);
+            // 
+        } catch (error) {
+            
+        }
     }
 }

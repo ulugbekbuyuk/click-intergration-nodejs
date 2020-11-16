@@ -1,4 +1,4 @@
-class ApiError extends Error {
+class ClickError extends Error {
     constructor(statusCode, message, isOperational = true, stack = '') {
       super(message);
       this.statusCode = statusCode;
@@ -11,4 +11,4 @@ class ApiError extends Error {
     }
   }
   
-  module.exports = ApiError;
+  module.exports = ClickError;

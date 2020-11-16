@@ -7,11 +7,11 @@ module.exports = {
 
     },
 
-    payment: async function(req, res, next) {
+    paymentWithCard: async function(req, res, next) {
 
     },
 
-    delete: async function(req, res, next) {
+    deleteCard: async function(req, res, next) {
 
     }
 }
