@@ -1,0 +1,30 @@
+{
+  "name": "click",
+  "version": "1.0.0",
+  "description": "click api implementation in nodejs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ulugbek Khusanov",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "http-status": "^1.4.2",
+    "joi": "^17.3.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.14",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^5.0.1",
+    "swagger-ui-express": "^4.1.4",
+    "validator": "^13.1.17",
+    "winston": "^3.3.3",
+    "xss-clean": "^0.1.1"
+  }
+}
