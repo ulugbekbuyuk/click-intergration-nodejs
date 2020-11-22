@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const validator = require('./../validations/invoice.validation');
 const controller = require('./../controllers/payment.controller');
 
 router.post('/status', controller.byPaymentId);
