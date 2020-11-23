@@ -1,4 +1,4 @@
-module.exports = Object.freeze({
+PaymentStatus = Object.freeze({
     INPUT: 'input',
     WAITING: 'waiting',
     PREAUTH: 'preauth',
@@ -7,3 +7,5 @@ module.exports = Object.freeze({
     REFUNDED: 'refunded',
     ERROR: 'error'
 });
+
+module.exports = PaymentStatus;
