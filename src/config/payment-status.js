@@ -1,4 +1,4 @@
-PaymentStatus = Object.freeze({
+module.exports = Object.freeze({
     INPUT: 'input',
     WAITING: 'waiting',
     PREAUTH: 'preauth',
@@ -8,4 +8,4 @@ PaymentStatus = Object.freeze({
     ERROR: 'error'
 });
 
-module.exports = PaymentStatus;
+// module.exports = PaymentStatus;
