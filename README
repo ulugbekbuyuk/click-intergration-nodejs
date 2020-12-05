@@ -1,1 +1,194 @@
 https://docs.click.uz/en/click-api/
+
+
+
+
+
+
+{
+    "categories": [
+        {
+            "id": "1",
+            "parent": null,
+            "title": "Dairy"
+        },
+        {
+            "id": "13",
+            "parent": "1",
+            "title": "Milk"
+        }
+    ],
+
+    "products": [
+        {
+            "id": "1",
+            "category": "13",
+            "title": "Nestle Milk 1.5 Plastic bottle",
+            "price": 6000.00,
+            "image": "some image url"
+        }
+    ],
+
+    "customers": [
+        {
+            "id": "1",
+            "title": "Seven-Eleven, Mirobod",
+            "inn": "aa111334",
+            "tel": "998995138903",
+            "lat": 23.23423423,
+            "lng": 108.232323,
+            "active": true
+        }
+    ],
+
+    "orders": [
+        {
+            "id": "1",
+            "customer": "1",
+            "items": [
+                {
+                    "product": "1",
+                    "quantity": 3
+                },
+                {
+                    "product": "23",
+                    "quantity": 2
+                }
+            ],
+            "status": 0,
+            "comment": "Some extra comment about this order",
+            "createdAt": "Some time stamp",
+            "updatedAt": "Some time stamp"
+        }
+    ]
+}
+
+
+
+
+// API Docs
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*** Category
+1) API call to get all "Category List", Acess Role: Admin/Customer
+Request
+    {API}/categories        [GET]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    [] Or [{...}, {...}, {...}]
+*Error
+
+2) API call to add new "Category", Acess Role: Admin
+Request
+    {API}/categories        [POST]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {CategoryObject}]
+Response, Status Code 200
+    {NewCategoryObject}
+*Error
+
+3) API call to edit existing "Category", Acess Role: Admin
+Request
+    {API}/categories/1        [PUT]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {CategoryObject}]
+Response, Status Code 200
+    {EditedCategoryObject}
+*Error
+
+4) API call to delete existing "Category", Acess Role: Admin
+Request
+    {API}/categories/1        [DELETE]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {DeletedCategoryObject}
+*Error
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*** Product
+1) API call to get all "Product List", Acess Role: Admin/Customer
+Request
+    {API}/products        [GET]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    [] Or [{...}, {...}, {...}]
+*Error
+
+2) API call to add new "Product", Acess Role: Admin
+Request
+    {API}/products        [POST]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {ProductObject}]
+Response, Status Code 200
+    {NewProductObject}
+*Error
+
+3) API call to edit existing "Product", Acess Role: Admin
+Request
+    {API}/products/1        [PUT]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {ProductObject}]
+Response, Status Code 200
+    {EditedProductObject}
+*Error
+
+4) API call to delete existing "Product", Acess Role: Admin
+Request
+    {API}/products/1        [DELETE]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {DeletedProductObject}
+*Error
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*** Customer
+1) API call to get all "Product List", Acess Role: Admin/Customer
+Request
+    {API}/customers        [GET]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    [] Or [{...}, {...}, {...}]
+*Error
+
+2) API call to add new "Customer", Acess Role: Admin
+Request
+    {API}/customers        [POST]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {CustomerObject}]
+Response, Status Code 200
+    {NewCustomerObject}
+*Error
+
+3) API call to edit "Customer", Acess Role: Admin
+Request
+    {API}/customers/1        [PUT]       [HttpHeader: { "token": "JWT_TOKEN" }]         [HttpBody: {CustomerObject}]
+Response, Status Code 200
+    {EditedCustomerObject}
+*Error
+
+4) API call to delete existing "Customer", Acess Role: Admin
+Request
+    {API}/customers/1        [DELETE]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {DeletedCutomerObject}
+*Error
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+
+*** Orders
+1) API call to add new "Order", Acess Role: Customer
+Request
+    {API}/orders        [POST]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {NewOrderObject}
+*Error
+
+2) API call to delete "Order", Access Role: Customer/Admin
+Request
+    {API}/orders/1        [DELETE]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {DeletedOrderObject}
+*Error
+
+3) API call to edit "Order", basically the status only, Access Role: Admin,
+Request
+    {API}/orders/1        [PUT]       [HttpHeader: { "token": "JWT_TOKEN" }]
+Response, Status Code 200
+    {UpdatedOrderObject}
+*Error
+
+
+***Error: 
+HttpResponse Status Code: 400/403/401
+HttpResponse Body:
+{
+    "error_code": "1102",
+    "error_note": "Some error message"
+}
